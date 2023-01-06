@@ -1,16 +1,17 @@
 package com.vet.Vetpro.Controller;
 
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.HashMap;
+
 @Controller
-public class UsuarioController {
+public class IndexController {
 
-    @GetMapping("/usuarios")
+
+    @GetMapping("/index")
     public String index(Model model) {
-        return"usuarios";
+        return "index";
     }
-
 }
