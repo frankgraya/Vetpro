@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
 <head>
 
     <meta charset="utf-8">
@@ -132,9 +131,9 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item active">
-            <a class="nav-link" href="tables.html">
+            <a class="nav-link"  th:href="@{/usuarios}">
                 <i class="fas fa-fw fa-table"></i>
-                <span>Tables</span></a>
+                <span>Usuarios</span></a>
         </li>
 
         <!-- Divider -->
@@ -385,24 +384,30 @@
                                 <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Nombre Completo</th>
                                     <th>Email</th>
-                                    <th>Telefono</th>
+                                    <th>Nombre</th>
+                                    <th>Apellidos</th>
                                     <th>Acciones</th>
+                                    <th>Rol</th>
                                 </tr>
                                 </thead>
 
                                 <tbody>
-                                <tr>
-                                    <td>123</td>
-                                    <td>Francisco granados</td>
-                                    <td>francisco.graya26@gmail.com</td>
-                                    <td>7223897339</td>
-                                    <td><a href="#" class="btn btn-danger btn-circle btn-sm">
+                                <tr  th:each="user: ${listUsers}">
+                                    <td  th:text="${user.id}"></td>
+                                    <td  th:text="${user.email}"></td>
+                                    <td  th:text="${user.nombre}"></td>
+                                    <td  th:text="${user.apellidos}"></td>
+                                    <td>
+
+                                        <a href="#" class="btn btn-danger btn-circle btn-sm">
                                         <i class="fas fa-trash"></i>
                                     </a>
+                                        <a href="#" class="btn btn-success btn-circle btn-sm">
+                                            <i class="fas fa-pen"></i>
+                                        </a>
                                     </td>
-
+                                    <td  th:text="${user.role.name}"></td>
                                 </tr>
 
                                 </tbody>

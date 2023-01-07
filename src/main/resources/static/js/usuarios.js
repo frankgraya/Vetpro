@@ -1,20 +1,29 @@
+
+
+$(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+
+
+
 // Call the dataTables jQuery plugin
-$(document).ready(function() {
+//$(document).ready(function() {
        // alert(1234567);
-       cargarUsuarios();
-  $('#usuarios').DataTable();
-});
+     //  cargarUsuarios();
+  //$('#usuarios').DataTable();
+//});
 
+//
+//async function cargarUsuarios(){
 
-async function cargarUsuarios(){
-
-  const request = await fetch('usuario/12345', {
-    method: 'GET',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    }
-  });
-  const usuarios = await request.json();
-  console.log(usuarios);
-}
+  //const request = await fetch('usuario/12345', {
+  //  method: 'GET',
+    //headers: {
+      //'Accept': 'application/json',
+      //'Content-Type': 'application/json'
+   // }
+  //});
+  //const usuarios = await request.json();
+ // console.log(usuarios);
+//}
+//}
