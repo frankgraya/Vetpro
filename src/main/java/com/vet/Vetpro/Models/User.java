@@ -46,6 +46,10 @@ public class User {
     @Column(name = "email",  nullable = false)
     private String email;
 
+    @Column(name = "enabled")
+    private boolean enabled;
+
+
     @ManyToOne
     @JoinColumn(name = "roles_id")
     private Role role;
